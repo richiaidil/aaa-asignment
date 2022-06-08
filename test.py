@@ -27,7 +27,7 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-iris = read.csv(text=GET("https://raw.githubusercontent.com/richiaidil/aaa-asignment/main/IRIS.csv"))
+iris = requests.get("https://raw.githubusercontent.com/richiaidil/aaa-asignment/main/IRIS.csv").content
 X = iris['sepal_length','sepal_width', 'petal_length','petal_width']
 Y = iris.species
 
